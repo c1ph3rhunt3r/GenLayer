@@ -13,6 +13,7 @@
     "vite": "^8.2.2"
   },
   "dependencies": {
-    "genlayer-js": "^1.1.8"
+    "genlayer-js": "^1.1.8",
+    "vercel": "^59.11.7"
   }
 }
