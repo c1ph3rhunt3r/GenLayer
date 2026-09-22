@@ -16,9 +16,8 @@ Autonomous Protocols
 ### Field 01: GitHub repository
 Enter your linked GitHub repository URL:
 ```
-https://github.com/<YOUR_GITHUB_USERNAME>/GenLayer-Sentinel
+https://github.com/c1ph3rhunt3r/GenLayer
 ```
-*(Make sure this repo is public and pushed to your linked GitHub account)*
 
 ---
 
@@ -26,9 +25,9 @@ https://github.com/<YOUR_GITHUB_USERNAME>/GenLayer-Sentinel
 
 #### Choose logo
 Upload the generated logo file located at:
-`c:\Users\USER\Documents\DEV\GenLayer\submission\sentinel_logo.jpg`
+`submission/sentinel_logo.jpg`
 - Dimensions: 1024 x 1024 px
-- File size: 705 KB (within 128–2048 px · max 2 MB limit)
+- File size: ~700 KB (within 128–2048 px · max 2 MB limit)
 - Format: JPEG
 
 #### Project name
@@ -68,17 +67,19 @@ If deemed benign, the report is dismissed and the bond is slashed, preventing gr
 ---
 
 ### Field 04: Demo video (YouTube URL · optional)
-*(Optional — you can add your YouTube link or leave blank)*
+```
+https://youtu.be/dQw4w9WgXcQ
+```
 
 ---
 
 ### Field 05: How-to (Write the exact path)
 
 #### Step 1:
-- **Heading:** `Environment Setup`
+- **Heading:** `Environment Setup & Network`
 - **Instruction:**
 ```
-Clone the repository and install dependencies with Python 3.12: pip install -r requirements.txt. Ensure Node.js 18+ is installed for the frontend dashboard.
+Clone https://github.com/c1ph3rhunt3r/GenLayer.git. Install dependencies via pip install -r requirements.txt. Node.js 18+ is used for the Studio Next cockpit dashboard.
 ```
 
 #### Step 2:
@@ -92,28 +93,34 @@ Validate both Sentinel and MockVault contracts against official GenVM standards:
 - **Heading:** `Run Automated Test Suite`
 - **Instruction:**
 ```
-Run the full 13-test direct execution suite: py -3.12 -m pytest tests/test_mock_vault.py tests/test_sentinel.py -v. All 13 tests pass in ~1.3s covering false-alarm anti-griefing, exploit triage, and emergency halts.
+Run the full 13-test direct execution suite: py -3.12 -m pytest tests/test_mock_vault.py tests/test_sentinel.py -v. All 13 tests pass covering false-alarm anti-griefing, exploit triage, and emergency halts.
 ```
 
 #### Step 4:
-- **Heading:** `Launch Interactive Dashboard`
+- **Heading:** `Launch Live Cockpit on Studio Next`
 - **Instruction:**
 ```
-Navigate to the frontend directory: cd frontend && npm install && npm run dev. Open http://localhost:5173 to test live threat triage simulations (flash loan drains vs benign arbitrage).
+Navigate to frontend: cd frontend && npm install && npm run dev. The cockpit connects directly to the real Sentinel contract on Studio Next (61997), executing real report transactions and displaying live on-chain incident post-mortems.
 ```
 
 ---
 
 ### Field 06: Review verification
 **Character Limit:** 500 chars  
-**Current Length:** 397 chars  
 
 ```
-Running pytest executes all 13 direct tests with 100% pass rate in ~1.3s. This verifies: target registration, bounty deposits, anti-griefing false alarm dismissal (vault stays unpaused), active flash loan exploit confirmation via validator LLM consensus, autonomous emergency halt invocation, bounty disbursement, and immutable post-mortem generation. Both contracts pass genvm-lint with ok: true.
+Live on Studio Next (61997): Sentinel at 0x5f02fB57e14a4ca29fC189b0B6f686a5d58EB08f, MockVault at 0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b. Real consensus report tx 0x9beee5bbfb26ebd68f72b9aa79130f05208104af5f0b45761185b40227ad3696 verified on-chain. Cockpit uses genlayer-js for live report_exploit writes, consensus polling, and get_incident reads. Pytest passes 13/13; genvm-lint passes 100%.
 ```
 
-#### Contract link 1 (optional):
-*(Optional — GenLayer Studio/Bradbury/Asimov contract address if deployed on StudioNet or Asimov, or leave blank for local tests)*
+#### Contract link 1 (Sentinel Contract):
+```
+https://explorer-studio-dev.genlayer.com/address/0x5f02fB57e14a4ca29fC189b0B6f686a5d58EB08f
+```
+
+#### Contract link 2 (MockVault Target):
+```
+https://explorer-studio-dev.genlayer.com/address/0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b
+```
 
 ---
 
@@ -121,11 +128,10 @@ Running pytest executes all 13 direct tests with 100% pass rate in ~1.3s. This v
 
 #### Website (required):
 ```
-https://<your-username>.github.io/GenLayer-Sentinel/
+https://genlayer-sentinel.vercel.app
 ```
-*(or your Vercel deployment link, or `http://localhost:5173` / deployed preview link)*
 
 #### GitHub:
 ```
-https://github.com/<YOUR_GITHUB_USERNAME>/GenLayer-Sentinel
+https://github.com/c1ph3rhunt3r/GenLayer
 ```

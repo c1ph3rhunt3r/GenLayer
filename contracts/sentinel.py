@@ -1,4 +1,4 @@
-# { "Depends": "py-genlayer:1zr6nqk597d97kg0dyxg0shhrykx5v02zjgnyrajapy4wlqvfvwh" }
+# { "Depends": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng" }
 """
 Sentinel – Autonomous AI Security Circuit Breaker
 =================================================
@@ -109,6 +109,7 @@ class Sentinel(gl.contract.Contract):
         Registers a protocol contract under Sentinel circuit breaker protection.
         The protocol owner deposits initial whitehat bounty rewards.
         """
+        target = Address(target) if isinstance(target, str) else target
         sender = gl.message.sender_address
         now_ts = int(time.time())
 
@@ -134,6 +135,7 @@ class Sentinel(gl.contract.Contract):
         """
         Adds additional funds to the whitehat bounty reward pool for a target.
         """
+        target = Address(target) if isinstance(target, str) else target
         if target not in self.targets:
             raise gl.vm.UserError("TARGET_NOT_FOUND: Contract is not registered.")
         if amount == 0:
@@ -157,6 +159,7 @@ class Sentinel(gl.contract.Contract):
         Validators fetch transaction telemetry and use LLM reasoning to reach
         consensus on whether an active exploit occurred.
         """
+        target = Address(target) if isinstance(target, str) else target
         if target not in self.targets:
             raise gl.vm.UserError("TARGET_NOT_FOUND: Target contract is not registered.")
 
@@ -318,6 +321,7 @@ Respond ONLY with a valid JSON object in this exact schema (no markdown, no prea
         Allows the protocol owner or Sentinel admin to unpause or override status
         after an incident has been remediated.
         """
+        target = Address(target) if isinstance(target, str) else target
         sender = gl.message.sender_address
         if target not in self.targets:
             raise gl.vm.UserError("TARGET_NOT_FOUND: Contract is not registered.")
@@ -366,6 +370,7 @@ Respond ONLY with a valid JSON object in this exact schema (no markdown, no prea
         """
         Returns protection configuration and status for a registered target.
         """
+        target = Address(target) if isinstance(target, str) else target
         if target not in self.targets:
             raise gl.vm.UserError("TARGET_NOT_FOUND: Contract is not registered.")
 
@@ -385,6 +390,7 @@ Respond ONLY with a valid JSON object in this exact schema (no markdown, no prea
         """
         Fast lookup to check if a target is currently in emergency halt state.
         """
+        target = Address(target) if isinstance(target, str) else target
         if target not in self.targets:
             return False
         return self.targets[target].is_paused

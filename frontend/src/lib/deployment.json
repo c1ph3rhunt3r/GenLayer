@@ -1,0 +1,12 @@
+{
+  "network": "GenLayer Studio Next",
+  "chainId": 61997,
+  "rpcUrl": "https://studio-dev.genlayer.com/api",
+  "explorerUrl": "https://explorer-studio-dev.genlayer.com",
+  "sentinelAddress": "0x5f02fB57e14a4ca29fC189b0B6f686a5d58EB08f",
+  "mockVaultAddress": "0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b",
+  "sentinelDeployTx": "0x5de481edf0053225506143d1a427b11584991febe3f6a8779f275dafa1dfeed4",
+  "mockVaultDeployTx": "0x4ea3d784d014930ae67800dfeaa66abd8092f326174f780d2b6f5da1a0d10f35",
+  "registrationTx": "0x433f7618d63d43ba2fe98e0ca5746682cdcff221b6469d00311fdae548b84dd3",
+  "deployedAt": "2026-09-22T21:32:49.886Z"
+}

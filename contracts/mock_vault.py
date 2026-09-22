@@ -1,4 +1,4 @@
-# { "Depends": "py-genlayer:1zr6nqk597d97kg0dyxg0shhrykx5v02zjgnyrajapy4wlqvfvwh" }
+# { "Depends": "py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng" }
 """
 MockVault – Representative Protected DeFi Vault
 ===============================================
@@ -29,7 +29,7 @@ class MockVault(gl.contract.Contract):
         vault_name: str = "Aegis Liquidity Vault",
     ) -> None:
         self.owner = gl.message.sender_address
-        self.guardian = guardian
+        self.guardian = Address(guardian) if isinstance(guardian, str) else guardian
         self.total_reserves = initial_reserves
         self.is_paused = False
         self.vault_name = vault_name

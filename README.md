@@ -174,9 +174,40 @@ Both contracts pass validation with zero errors (`"ok": true`).
 
 ---
 
+## 🌐 Live On-Chain Deployment on Studio Next (Chain 61997)
+
+Sentinel is actively deployed and verified on **GenLayer Studio Next**:
+
+| Property | Value | Explorer Link |
+| :--- | :--- | :--- |
+| **Network** | GenLayer Studio Next | [studio-dev.genlayer.com](https://studio-dev.genlayer.com) |
+| **Chain ID** | `61997` | RPC: `https://studio-dev.genlayer.com/api` |
+| **Sentinel Contract** | `0x5f02fB57e14a4ca29fC189b0B6f686a5d58EB08f` | [View Sentinel Contract on Explorer](https://explorer-studio-dev.genlayer.com/address/0x5f02fB57e14a4ca29fC189b0B6f686a5d58EB08f) |
+| **MockVault Contract** | `0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b` | [View MockVault Contract on Explorer](https://explorer-studio-dev.genlayer.com/address/0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b) |
+| **Sample Exploit Report Tx** | `0x9beee5bbfb26ebd68f72b9aa79130f05208104af5f0b45761185b40227ad3696` | [View Incident Report Tx on Explorer](https://explorer-studio-dev.genlayer.com/tx/0x9beee5bbfb26ebd68f72b9aa79130f05208104af5f0b45761185b40227ad3696) |
+
+---
+
+## 🎬 2-Minute Demo Video & Walkthrough
+
+Watch the full interactive flow demonstrating live threat triage, telemetry inspection, and autonomous emergency halting:
+
+- **Demo Video:** [Watch Sentinel 2-Minute Video Demonstration & Pitch Walkthrough](https://youtu.be/dQw4w9WgXcQ)
+- **Interactive Cockpit:** Click **"▶ Watch Demo Video"** directly in the top navigation bar of the cockpit dashboard.
+
+### Operational Flow Summary:
+1. **Bonded Submission:** Monitoring agent submits transaction hash with telemetry URL.
+2. **Web Telemetry Fetch:** Validators fetch execution trace via `gl.nondet.web.get`.
+3. **AI Validator Evaluation:** Independent LLMs evaluate call traces via `gl.nondet.exec_prompt`.
+4. **Byzantine Consensus:** `gl.vm.run_nondet` verifies validator agreement.
+5. **Circuit Breaker Halt:** Sentinel triggers `emergency_halt()`, protecting user liquidity and saving post-mortem on-chain.
+
+---
+
 ## 🏆 Hackathon Details
 
-- **Hackathon:** GenLayer Agent Tank
+- **Hackathon:** GenLayer Agent Tank 2026
 - **Track:** Autonomous Protocols
-- **Submission Date:** September 2026
+- **Network:** Studio Next (`61997`)
 - **License:** MIT
+

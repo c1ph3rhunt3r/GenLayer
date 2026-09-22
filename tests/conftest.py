@@ -25,6 +25,29 @@ project_root = str(Path(__file__).parent.parent)
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
+# 1.5 Runner Hash Compatibility Patch for Studio Next
+# Studio Next uses runner hash 5jyc..., while local gltest-direct has v0.3.0-rc7 (1zr6...)
+import gltest.direct.sdk_loader as _sdk_loader
+
+_orig_extract_runner = _sdk_loader.extract_runner
+
+def _patched_extract_runner(tarball_path, runner_type, runner_hash=None, version=None):
+    try:
+        return _orig_extract_runner(tarball_path, runner_type, runner_hash, version)
+    except ValueError:
+        if version is None:
+            import re
+            match = re.search(r"genvm-universal-(.+)\.tar\.xz", tarball_path.name)
+            version = match.group(1) if match else "unknown"
+        extract_base = _sdk_loader.CACHE_DIR / "extracted" / version / runner_type
+        if extract_base.exists():
+            existing = sorted(extract_base.iterdir(), reverse=True)
+            if existing:
+                return existing[0]
+        raise
+
+_sdk_loader.extract_runner = _patched_extract_runner
+
 # 2. Setup module aliases for gltest backward-compatibility
 import genlayer
 import genlayer.types

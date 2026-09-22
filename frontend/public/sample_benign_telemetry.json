@@ -1,0 +1,15 @@
+{
+  "tx_hash": "0x4a8c9120de84021948291048bcfd901849102849",
+  "network": "Ethereum Mainnet",
+  "target_protocol": "Aegis Liquidity Vault (0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b)",
+  "flash_loans": [],
+  "execution_trace": [
+    "1. Uniswap v3 swap: 500 ETH -> 1,600,000 USDC",
+    "2. AegisVault.deposit(500 ETH) -> 1:1 shares minted",
+    "3. Normal arbitrage rebalance, collateral 100% matched",
+    "4. No reentrant loops, no oracle manipulation detected"
+  ],
+  "reserve_drain_pct": 0.0,
+  "proportional_collateral": true,
+  "anomaly_score": 0.04
+}

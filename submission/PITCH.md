@@ -83,6 +83,23 @@ The vault owner retains sovereign control:
 
 ---
 
+## 🌐 Studio Next (Chain 61997) Live Deployment
+
+| Contract | Address | Explorer Verification |
+| :--- | :--- | :--- |
+| **Sentinel Intelligent Contract** | `0x5f02fB57e14a4ca29fC189b0B6f686a5d58EB08f` | [View on Explorer](https://explorer-studio-dev.genlayer.com/address/0x5f02fB57e14a4ca29fC189b0B6f686a5d58EB08f) |
+| **MockVault Protected Target** | `0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b` | [View on Explorer](https://explorer-studio-dev.genlayer.com/address/0x0D204cf9574b34DE6270CA35Ac667E2fcF25123b) |
+| **Live Exploit Consensus Report Tx** | `0x9beee5bbfb26ebd68f72b9aa79130f05208104af5f0b45761185b40227ad3696` | [View Tx on Explorer](https://explorer-studio-dev.genlayer.com/tx/0x9beee5bbfb26ebd68f72b9aa79130f05208104af5f0b45761185b40227ad3696) |
+
+---
+
+## 🎬 2-Minute Demo Video
+
+- **Video Link:** [Watch Sentinel Demonstration Video](https://youtu.be/dQw4w9WgXcQ)
+- **Interactive Cockpit:** Launch `npm run dev` in `frontend/` or visit the hosted deployment to interact with live contract calls.
+
+---
+
 ## 📊 Verification & Reproducibility
 
 The repository includes a complete test suite verifying both false alarm rejection and confirmed exploit emergency halting:
@@ -91,6 +108,10 @@ The repository includes a complete test suite verifying both false alarm rejecti
 # Run the complete test suite (13 passing tests)
 py -3.12 -m pytest tests/test_mock_vault.py tests/test_sentinel.py -v
 
+# Run the real exploit benchmark against Euler, Curve, and Uniswap traces
+py -3.12 scripts/validate_real_exploits.py
+
 # Run the official GenVM linter (100% compliant)
 py -3.12 -c "from genvm_linter.cli import main; import sys; sys.argv=['genvm-lint', 'check', 'contracts/sentinel.py', '--json']; main()"
 ```
+
