@@ -496,7 +496,7 @@ btnAttack.addEventListener('click', async () => {
       txHash: '0x7f1a942cd894ef930219842bfbc9029a1b0294129',
       network: 'Base',
       description: 'Flash loan liquidity drain: 50,000 ETH borrowed from Aave, spot oracle manipulated, draining 88% of vault reserves',
-      telemetryUrl: `${window.location.origin}/sample_exploit_telemetry.json`,
+      telemetryUrl: 'https://raw.githubusercontent.com/c1ph3rhunt3r/GenLayer/master/submission/sample_exploit_telemetry.json',
     });
 
     log(`On-chain transaction submitted! Tx Hash:`, 'info');
@@ -547,7 +547,7 @@ btnBenign.addEventListener('click', async () => {
       txHash: '0x4a8c9120de84021948291048bcfd901849102849',
       network: 'Ethereum Mainnet',
       description: 'Routine 500 ETH Uniswap DEX arbitrage trade. Collateral 100% balanced, no anomalous drain.',
-      telemetryUrl: `${window.location.origin}/sample_benign_telemetry.json`,
+      telemetryUrl: 'https://raw.githubusercontent.com/c1ph3rhunt3r/GenLayer/master/submission/sample_benign_telemetry.json',
     });
 
     log(`On-chain transaction submitted! Tx Hash:`, 'info');
